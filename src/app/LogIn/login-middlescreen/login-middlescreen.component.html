@@ -1,0 +1,70 @@
+<!-- app/components/foreground-form.component.html -->
+
+<div class="min-h-screen relative" 
+style="background-image: url('https://th.bing.com/th/id/R.dc4d38eb3e575eeeaf91644b34ec26ca?rik=0%2fpyIdPxCdipag&pid=ImgRaw&r=0'); background-size: cover; background-position: center;">
+
+  <!-- Form Component Container -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="bg-white w-[600px] h-3/4 p-12 rounded-lg shadow-lg text-center">
+      <h1 class="text-4xl font-bold text-black mb-6">Hello, Welcome</h1>
+
+      <!-- Buttons -->
+      <div class="flex justify-center space-x-4 mb-4">
+        <mat-button-toggle value="individual" class="bg-white text-black px-4 py-2 rounded-full w-50 focus:text-white focus:bg-black hover:bg-black  hover:text-white active:bg-black">
+          Individual account
+        </mat-button-toggle>
+        <mat-button-toggle value="organization" class="bg-white text-black px-4 py-2 rounded-full w-50 focus:text-white focus:bg-black hover:bg-black  hover:text-white active:bg-black">
+          Organiztaion account
+        </mat-button-toggle>
+      </div>
+
+      <div class="flex justify-center space-x-4 mt-4">
+        <mat-button-toggle value="citizen" class="bg-white text-black px-4 py-2 rounded-full w-40 focus:text-white focus:bg-black hover:bg-black  hover:text-white active:bg-black">
+          Citizen
+        </mat-button-toggle>
+        <mat-button-toggle value="non-citizen" class="bg-white text-black px-4 py-2 rounded-full w-40 focus:text-white focus:bg-black hover:bg-black  hover:text-white active:bg-black">
+          Non-Citizen
+        </mat-button-toggle>
+      </div>
+
+      <!-- Input Fields with labels -->
+      <div class="mt-2 px-16 p-2">
+        <label for="nationalID" class="text-sm mb-1 block p-2">National ID</label>
+        <input type="text" id="nationalID" class="w-full p-2 border rounded-lg bg-slate-100">
+      </div>
+      <div class="mt-2 px-16 p-2">
+        <label for="password" class="text-sm mb-1 block p-2">Password</label>
+        <input type="password" id="password" class="w-full p-2 border rounded-lg bg-slate-100">
+      </div>
+
+      <div>
+        <!-- Forgot Password Text -->
+        <p class="text-black text-sm mb-2 p-4">Forgot password?</p>
+      
+        <!-- Login Button -->
+        <a href="" class="bg-red-500 text-white p-4 px-4 py-2 rounded-full focus:outline-none focus:ring focus:border-red-300">Login</a>
+
+        <div class="flex justify-center mt-5">
+          <!-- Don't have an account? Text -->
+          <p class="text-black p-4">Don't have an account?</p>
+          <a href="register" class="p-4">Register</a>
+        </div>
+      
+        
+
+      </div>      
+ </div>
+  </div>
+
+</div>
+
+<script>
+  function selectButton(selectedButton) {
+    // Reset styles for both buttons
+    document.getElementById('button1').classList.remove('bg-black', 'text-white');
+    document.getElementById('button2').classList.remove('bg-black', 'text-white');
+
+    // Apply styles to the selected button
+    document.getElementById('button' + selectedButton).classList.add('bg-black', 'text-white');
+  }
+</script>

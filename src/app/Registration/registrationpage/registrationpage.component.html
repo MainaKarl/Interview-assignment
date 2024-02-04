@@ -1,0 +1,110 @@
+
+<div class="min-h-screen relative" 
+    style="
+    background-image: url('https://th.bing.com/th/id/R.dc4d38eb3e575eeeaf91644b34ec26ca?rik=0%2fpyIdPxCdipag&pid=ImgRaw&r=0'); 
+    background-size: cover; 
+    background-position: center;"
+    >
+    <div class="absolute inset-0 flex items-center justify-center">
+        <mat-stepper [linear]="isLinear" #stepper class="flex justify-center rounded-lg p-2">
+            <form [formGroup]="register" class="w-full max-w-md rounded-full">
+                <mat-step label="Choose your business type">
+                    <div formGroupName="type" class="flex flex-col h-[380px] mt-10 items-center">
+                        <div class="flex mb-4 w-3/4 mt-4 justify-center gap-5">
+                            <mat-button-toggle-group name="accountType" aria-label="Account Type">
+                                    <mat-button-toggle value="business" class="bg-white text-black px-4 py-2 rounded-full w-50 focus:text-white focus:bg-black hover:bg-black  hover:text-white active:bg-black borrder-none">
+                                      Individual account
+                                    </mat-button-toggle>
+                            
+                                    <mat-button-toggle value="business" class="bg-white text-black px-4 py-2 rounded-full w-50 focus:text-white focus:bg-black hover:bg-black  hover:text-white active:bg-black border-none">
+                                      Business account
+                                    </mat-button-toggle>
+                            </mat-button-toggle-group>
+                          </div>                          
+                          
+                        <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </div>
+                </mat-step>
+
+                <mat-step>
+                    <div formGroupName="verification" class="flex flex-col h-[380px] mt-10 items-center">
+                        <ng-template matStepLabel>Fill out your name</ng-template>
+                        <div class="mb-4 w-3/4 mt-4">
+                            <mat-form-field class="w-full">
+                                <mat-label>Phone Number</mat-label>
+                                <input matInput placeholder="Eg 0712345678" formControlName="phoneno">
+                            </mat-form-field>
+                        </div>
+                        
+                        <div class="mb-4 w-3/4">
+                            <mat-form-field class="w-full">
+                                <mat-label>Enter ID Number</mat-label>
+                                <input matInput placeholder="Eg 111 111 111" formControlName="idno">
+                            </mat-form-field>
+                        </div>
+        
+                        <div class="mb-4 w-3/4">
+                            <mat-form-field class="w-full">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="Eg John" formControlName="firstname">
+                            </mat-form-field>
+                        </div>
+        
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </div>
+                </mat-step>
+        
+                <mat-step label="Fill out your address">
+                    <div formGroupName="account" class="flex flex-col h-[380px] mt-10 items-center">
+                        <div class="mb-4 w-3/4 mt-4">
+                            <mat-form-field class="w-full">
+                                <mat-label>Email address</mat-label>
+                                <input matInput placeholder="email" formControlName="email">
+                            </mat-form-field>
+                        </div>
+        
+                        <div class="mb-4 w-3/4">
+                            <mat-form-field class="w-full">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" formControlName="password">
+                            </mat-form-field>
+                        </div>
+        
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </div>
+                </mat-step>
+        
+                <mat-step >
+                    <div formGroupName="confirm" class="flex flex-col h-[380px] mt-10 items-center ">
+                        <ng-template matStepLabel>Done</ng-template>
+                        
+                        <div class="font-metropolis mb-5">
+                            <div class="mb-8 flex justify-center">
+                                <img src="https://th.bing.com/th/id/OIP.ScL_tdX3saCEtI5zWW19fAHaHa?rs=1&pid=ImgDetMain" alt="Background Image" class=" w-40 h-40" />
+                            </div>
+                            <p class="text-2xl font-bold">YOU'VE REGISTERED</p>
+                            <p class="text-xl font-semibold">WITH NAROK SELF SERVICE</p>
+                        </div>
+                          
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <a mat-button href="landingpage">Log in</a>
+                        </div>
+                        <div>
+                            <button mat-button (click)="stepper.reset()">Reset details</button>
+                        </div>
+                    </div>
+                </mat-step>
+            </form>
+        </mat-stepper>
+    </div>
+
+</div>
